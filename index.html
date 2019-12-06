@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Color Extraction Effect with Vibrant.js</title>
+		<meta name="description" content="Creating a color palette from images in a fun way using Vibrant.js" />
+		<meta name="keywords" content="color palette, effect, animation, vibrant.js, extract color, image, web design" />
+		<meta name="author" content="" />
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		
+  		<script src="js/modernizr.custom.js"></script>
+  		<link rel="stylesheet" href="https://unpkg.com/filepond/dist/filepond.min.css" type="text/css">
+  		<link rel="stylesheet" href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css">
+
+  		<style type="text/css">
+
+  			.filepond {
+  				background: #3a3c40;
+  				height: 400px;
+  				border-radius: 80px;
+  			}
+  			filepond--root :not(text){
+  				background: #3a3c40;
+  			}
+  			.slider__nav-wrap{
+  				display: none;
+  			}
+  			.filepond--image-preview-wrapper {
+  				height: 370px;
+  			}
+  			#tools{
+  				margin-top: -30px;
+  			}
+ 
+  		</style>
+
+  	
+	</head>
+	<body>
+		<!-- <svg viewBox="0 0 640 360" id="abu2">
+			<filter id="grayscale">
+				<feColorMatrix type="saturate" values="0"/>
+			</filter>
+		</svg> -->
+
+		
+
+
+		<div class="container">
+			<header class="codrops-header">
+
+				<h1>See Color <span>extract color from any image</span></h1>
+				<br>
+				<input type="file" 
+			       class="filepond"
+			       name="filepond"
+			       
+			       instantUpload="true"
+			       allowImageFilter="true"
+			       data-max-file-size="5MB"
+			       data-max-files="3"/>
+			</header>
+			<div class="content">
+				<div id="slider" class="slider">
+
+					<!-- <img class="slider__img" src="#" id="myImg" height="100px" width="100px" /> -->
+					<div class="slider__item slider__item--current">
+						<img class="slider__img img img-responsive" src="img/2.jpg" alt="img" id="myImg" style="display: none"/>
+					</div>
+					<div class="slider__item">
+						<img class="slider__img" src="img/2.jpg" alt="img02" />
+					</div>
+					<div class="slider__item">
+						<img class="slider__img" src="img/3.jpg" alt="img03" />
+					</div>
+					<div class="slider__item">
+						<img class="slider__img" src="img/4.jpg" alt="img04" />
+					</div>
+					<div class="slider__item">
+						<img class="slider__img" src="img/5.jpg" alt="img05" />
+					</div>
+					<div class="slider__item">
+						<img class="slider__img" src="img/6.jpg" alt="img06" />
+					</div>
+					<div class="slider__item">
+						<img class="slider__img" src="img/7.jpg" alt="img07" />
+					</div>
+					<nav class="slider__nav-wrap">
+						<button class="slider__nav slider__nav--prev"><!-- <i class="fa fa-angle-left"></i><span class="text-hidden">Previous</span> --></button>
+						<button class="slider__nav slider__nav--next"><!-- <i class="fa fa-angle-right"></i><span class="text-hidden">Next</span> --></button>
+					</nav>
+				</div><!-- /slider -->
+				<div class="tools" id="tools">
+					<button class="button-color"><i class="fa fa-eyedropper"></i><span class="text-hidden">Extract</span></button>
+					<ul class="palette">
+						<li class="palette__item">
+							<div class="palette__inner">
+								<div class="palette__fill"></div>
+								<i class="icon fa fa-tint"></i>
+								<div class="palette__name">
+									<span class="palette__value palette__value--default">#######</span>
+									<span class="palette__value palette__value--real">#######</span>
+								</div>
+							</div>
+							<i class="drop drop--1"></i>
+							<i class="drop drop--2"></i>
+							<i class="drop drop--3"></i>
+							<i class="drop drop--4"></i>
+						</li>
+						<li class="palette__item">
+							<div class="palette__inner">
+								<div class="palette__fill"></div>
+								<i class="icon fa fa-tint"></i>
+								<div class="palette__name">
+									<span class="palette__value palette__value--default">#######</span>
+									<span class="palette__value palette__value--real">#######</span>
+								</div>
+							</div>
+							<i class="drop drop--1"></i>
+							<i class="drop drop--2"></i>
+							<i class="drop drop--3"></i>
+							<i class="drop drop--4"></i>
+						</li>
+						<li class="palette__item">
+							<div class="palette__inner">
+								<div class="palette__fill"></div>
+								<i class="icon fa fa-tint"></i>
+								<div class="palette__name">
+									<span class="palette__value palette__value--default">#######</span>
+									<span class="palette__value palette__value--real">#######</span>
+								</div>
+							</div>
+							<i class="drop drop--1"></i>
+							<i class="drop drop--2"></i>
+							<i class="drop drop--3"></i>
+							<i class="drop drop--4"></i>
+						</li>
+						<li class="palette__item">
+							<div class="palette__inner">
+								<div class="palette__fill"></div>
+								<i class="icon fa fa-tint"></i>
+								<div class="palette__name">
+									<span class="palette__value palette__value--default">#######</span>
+									<span class="palette__value palette__value--real">#######</span>
+								</div>
+							</div>
+							<i class="drop drop--1"></i>
+							<i class="drop drop--2"></i>
+							<i class="drop drop--3"></i>
+							<i class="drop drop--4"></i>
+						</li>
+						<li class="palette__item">
+							<div class="palette__inner">
+								<div class="palette__fill"></div>
+								<i class="icon fa fa-tint"></i>
+								<div class="palette__name">
+									<span class="palette__value palette__value--default">#######</span>
+									<span class="palette__value palette__value--real">#######</span>
+								</div>
+							</div>
+							<i class="drop drop--1"></i>
+							<i class="drop drop--2"></i>
+							<i class="drop drop--3"></i>
+							<i class="drop drop--4"></i>
+						</li>
+					</ul>
+				</div><!-- /tools -->
+			</div>
+			
+		</div><!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/Vibrant.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.min.js"></script>
+		<script src="https://unpkg.com/filepond-plugin-file-validate-size/dist/filepond-plugin-file-validate-size.min.js"></script>
+		<script src="https://unpkg.com/filepond-plugin-image-exif-orientation/dist/filepond-plugin-image-exif-orientation.min.js"></script>
+		<script src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.js"></script>
+		<script src="https://unpkg.com/filepond/dist/filepond.min.js"></script>
+
+		<script src="https://unpkg.com/filepond-plugin-image-filter/dist/filepond-plugin-image-filter.js"></script>
+
+		<script>
+
+			/*
+			We want to preview images, so we need to register the Image Preview plugin
+			*/
+			FilePond.registerPlugin(
+				
+				// encodes the file as base64 data
+				FilePondPluginFileEncode,
+				
+				// validates the size of the file
+				FilePondPluginFileValidateSize,
+				
+				// corrects mobile image orientation
+				FilePondPluginImageExifOrientation,
+				
+				// previews dropped images
+				FilePondPluginImagePreview,
+
+				//image filter
+				FilePondPluginImageFilter,
+
+			);
+
+			// Select the file input and use create() to turn it into a pond
+			FilePond.create(
+				document.querySelector('input')
+			);
+
+			// const pond = FilePond.create(inputElement, {
+			//     imageFilterColorMatrix: [
+			//         0.299, 0.587, 0.114, 0, 0,
+			//         0.299, 0.587, 0.114, 0, 0,
+			//         0.299, 0.587, 0.114, 0, 0,
+			//         0.000, 0.000, 0.000, 1, 0
+			//     ]
+			// });
+			
+			window.addEventListener('load', function() {
+			  document.querySelector('input[type="file"]').addEventListener('change', function() {
+			      if (this.files && this.files[0]) {
+			          var img = document.querySelector('#myImg');  // $('img')[0]
+			          img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+			          img.onload = imageIsLoaded;
+			      }
+			  });
+			});
+
+			function imageIsLoaded() { 
+			  // alert(this.src);  // blob url
+			  // update width and height ...
+			}
+
+
+		</script>
+	</body>
+</html>
